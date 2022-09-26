@@ -9,6 +9,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import logoImg from './assets/logo-nlw-esports.svg';
 import axios from 'axios';
 
+
 interface Game {
   id: string;
   title: string;
@@ -22,7 +23,7 @@ function App() {
   const [games, setGames] = useState<Game[]>([])
 
   useEffect(() => {
-    axios('http://localhost:3333/games').then(response => {
+    axios('http://172.16.1.62:3333/games').then(response => {
         setGames(response.data)
     })
   }, [])

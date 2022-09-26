@@ -27,13 +27,13 @@ export function Game() {
   }
 
   async function getDiscordUser(adsId: string){
-    fetch(`http://192.168.0.106:3333/ads/${adsId}/discord`)
+    fetch(`http://172.16.1.62:3333/ads/${adsId}/discord`)
     .then(response => response.json())
     .then(data => setDiscordDuoSelected(data.discord));
   }
   
   useEffect(() => {
-    fetch(`http://192.168.0.106:3333/games/${game.id}/ads`)
+    fetch(`http://172.16.1.62:3333/games/${game.id}/ads`)
     .then(response => response.json())
     .then(data => 
       setDuos(data)
